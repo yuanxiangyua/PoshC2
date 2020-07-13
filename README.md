@@ -112,6 +112,17 @@ See the Docker section below on running PoshC2 using Docker.
 
 Instructions on configuring and running PoshC2 are printed at the bottom of the installation script or available at https://poshc2.readthedocs.io/en/latest/.
 
+### Specifying a Docker tag
+
+If you are using Docker you can specify the Docker image tag to run with the `-t` option to `posh-server` and `posh`.
+
+E.g.
+
+```bash
+posh-server -t latest
+
+```
+
 ## Updating PoshC2 Installations
 
 When using a git cloned version of PoshC2 you can update your PoshC2 installation using the following command:
