@@ -80,7 +80,11 @@ if [[ ! -d "$POSH_DIR" ]]; then
     apt-get install -y git
     git clone -b "$GIT_BRANCH" https://github.com/nettitude/PoshC2 "$POSH_DIR"
 else
-    echo "[*] PoshC2 directory already exists, skipping clone."
+    echo "[*] PoshC2 directory already exists, updating..."
+    pushd "$POSH_DIR"
+    git fetch
+    git stash
+    git reset --hard origin/"$GIT_BRANCH"
 fi
 
 # Install requirements for PoshC2
