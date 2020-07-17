@@ -34,7 +34,7 @@ GIT_BRANCH="master"
 POSH_DIR="/opt/PoshC2"
 SCRIPT_DIR=`dirname "$0"`
 
-if [ -f "$SCRIPT_DIR/poshc2/server/C2Server.py"]; then
+if [ -f "$SCRIPT_DIR/poshc2/server/C2Server.py" ]; then
     POSH_DIR="$SCRIPT_DIR"
 fi
 
@@ -46,20 +46,20 @@ show_help(){
     echo "Defaults are master branch to /opt/PoshC2"
 }
 
-while getopts "h?bp:" opt; do
+while getopts ":h:?:b:p:" opt; do
     case "$opt" in
     h|\?)
         show_help
         exit 0
         ;;
-    b)  GIT_BRANCH="$OPTARG"
+    b)  GIT_BRANCH=$OPTARG
         ;;
-    p)  POSH_DIR="$OPTARG"
+    p)  POSH_DIR=$OPTARG
         ;;
     esac
 done
 
-echo "[+] Installing PoshC2"
+echo "[+] Installing PoshC2 in \"$POSH_DIR\" for branch \"$GIT_BRANCH\""
 echo ""
 
 # Update apt
