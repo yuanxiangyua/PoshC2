@@ -27,6 +27,7 @@ if [ "$1" == "-n" ]; then
     echo "$2" | sudo tee "$POSH_PROJECTS_DIR/CURRENT_PROJECT" >/dev/null
     sudo cp "$POSH_PROJECTS_DIR/config-template.yml" "$POSH_PROJECTS_DIR/$2/config.yml"
     echo "[+] Created Project: $2"
+    echo "[*] Now run posh-config to set your configuration"
 
 elif [ "$1" == "-s" ]; then
     if [ -z "$2"]; then
